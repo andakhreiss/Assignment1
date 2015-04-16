@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome to OTV_JSF_Spring_Hibernate_Project</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:outputText value="USERs : "></h:outputText>
+		<p:dataTable id="users" var="user" value="#{userMB.userList}" style="width: 20%">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="ID" />
+				</f:facet>
+				<h:outputText value="#{user.id}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Name" />
+				</f:facet>
+				<h:outputText value="#{user.name}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Surname" />
+				</f:facet>
+				<h:outputText value="#{user.surname}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Phone" />
+				</f:facet>
+				<h:outputText value="#{user.phone}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Address" />
+				</f:facet>
+				<h:outputText value="#{user.address}" />
+			</p:column>
+		</p:dataTable>
+		
+		
+	</h:form>
+	
+	<h:form>
+		<h:outputText value="ACCOUNTs : "></h:outputText>
+		<p:dataTable id="accounts" var="account" value="#{accountMB.accountList}" style="width: 20%">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idAccount" />
+				</f:facet>
+				<h:outputText value="#{account.idAccount}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idClient" />
+				</f:facet>
+				<h:outputText value="#{account.idClient}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="type" />
+				</f:facet>
+				<h:outputText value="#{account.type}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="date" />
+				</f:facet>
+				<h:outputText value="#{account.date}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="sum" />
+				</f:facet>
+				<h:outputText value="#{account.sum}" />
+			</p:column>
+			
+		</p:dataTable>
+		
+		
+	</h:form>
+	
+	<h:form>
+		<h:outputText value="TRANSACTIONs : "></h:outputText>
+		<p:dataTable id="transaction" var="transaction" value="#{transactionMB.transactionList}" style="width: 10%">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idTransaction" />
+				</f:facet>
+				<h:outputText value="#{transaction.idTransaction}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idAccount" />
+				</f:facet>
+				<h:outputText value="#{transaction.idAccount}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="toAccNb" />
+				</f:facet>
+				<h:outputText value="#{transaction.toAccNb}" />
+			</p:column>
+			
+			
+			
+		</p:dataTable>
+		
+		
+	</h:form>
+</h:body>
+
+</html>

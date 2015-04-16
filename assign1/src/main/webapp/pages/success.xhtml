@@ -1,0 +1,205 @@
+<html xmlns="http://www.w3.org/1999/xhtml"  
+     xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:p="http://primefaces.org/ui">  
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Investment Bank</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+
+
+</head>
+
+<body>
+
+<div id="templatemo_body_wrapper">
+<div id="templatemo_wrapper">
+
+	<div id="templatemo_header">
+    	<div id="site_title">
+    	  <h1><a href="#">Investment BanK</a></h1></div>
+        <div id="header_right">
+        	<p>
+         
+ 	        <a href="#">My Account</a> | <a href="login.jsf">Log In</a> | <a href="#"> Log Out</a></p>
+        
+	 
+		</div>
+        <div class="cleaner"></div>
+    </div> 
+    
+    <div id="templatemo_menubar">
+    	<div id="top_nav" class="ddsmoothmenu">
+            <ul>
+                <li><a href="index.xhtml" class="selected">Home</a></li>
+                
+                <li><a href="#">About</a>
+                  
+                </li>
+               
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of ddsmoothmenu -->
+        <div id="templatemo_search">
+            <form action="#" method="get">
+              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            
+            </form>
+        </div>
+    </div> <!-- END of templatemo_menubar -->
+    
+    
+          <div class="cleaner"></div>
+         <div id="content" class="float_r">
+        	<br/>
+        	<h:form>
+		<h:outputText value="USERs : "></h:outputText>
+		<p:dataTable id="users" var="user" value="#{userMB.userList}" style="width: 50%">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="ID  " />
+				</f:facet>
+				<h:outputText value="#{user.id}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Name  " />
+				</f:facet>
+				<h:outputText value="#{user.name}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Surname  " />
+				</f:facet>
+				<h:outputText value="#{user.surname}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Phone  " />
+				</f:facet>
+				<h:outputText value="#{user.phone}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Address  " />
+				</f:facet>
+				
+				
+				
+			</p:column>
+			
+			<p:column>
+			<p:commandButton id="editUser" value="Edit" action="#{userMB.editUser}" ajax="false"/>
+				
+				
+			</p:column>
+			
+			<p:column>
+			<p:commandButton id="deleteUser" value="Delete" action="#{userMB.deleteUser}" ajax="false"/>
+				
+				
+			</p:column>
+		</p:dataTable>
+		
+		
+	</h:form>
+	
+	<h:form>
+		<h:outputText value="ACCOUNTs : "></h:outputText>
+		<p:dataTable id="accounts" var="account" value="#{accountMB.accountList}" style="width: 20%">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idAccount  " />
+				</f:facet>
+				<h:outputText value="#{account.idAccount}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idClient  " />
+				</f:facet>
+				<h:outputText value="#{account.idClient}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="AccountNb  " />
+				</f:facet>
+				<h:outputText value="#{account.accNb}" />
+			</p:column>
+			
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="type  " />
+				</f:facet>
+				<h:outputText value="#{account.type}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="date  " />
+				</f:facet>
+				<h:outputText value="#{account.date}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="sum  " />
+				</f:facet>
+				<h:outputText value="#{account.sum}" />
+			</p:column>
+			
+		</p:dataTable>
+		
+		
+	</h:form>
+	
+	<h:form>
+		<h:outputText value="TRANSACTIONs : "></h:outputText>
+		<p:dataTable id="transaction" var="transaction" value="#{transactionMB.transactionList}" style="width: 10%">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idTransaction  " />
+				</f:facet>
+				<h:outputText value="#{transaction.idTransaction}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idAccount  " />
+				</f:facet>
+				<h:outputText value="#{transaction.idAccount}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="toAccNb  " />
+				</f:facet>
+				<h:outputText value="#{transaction.toAccNb}" />
+			</p:column>
+			
+			
+			
+		</p:dataTable>
+		
+		
+	</h:form>
+        </div>
+  </div> 
+        <div class="cleaner"></div>
+    </div> <!-- END of templatemo_main -->
+    
+    <div id="templatemo_footer">
+    	<p><a href="#">Home</a> | <a href="#">About</a> | <a href="#">FAQs</a> | <a href="login.jsf">Admin</a> | <a href="#">Contact Us</a>
+		</p>
+
+   	Copyright © 2072 <a href="#">Bank App</a> <!-- Credit: www.templatemo.com --></div> <!-- END of templatemo_footer -->
+    
+
+
+</body>
+</html> 

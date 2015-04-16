@@ -1,0 +1,369 @@
+<html xmlns="http://www.w3.org/1999/xhtml"  
+     xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:p="http://primefaces.org/ui">  
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Investment Bank</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+
+
+</head>
+
+<body>
+
+<div id="templatemo_body_wrapper">
+<div id="templatemo_wrapper">
+
+	<div id="templatemo_header">
+    	<div id="site_title">
+    	  <h1><a href="#">Investment BanK</a></h1></div>
+        <div id="header_right">
+        	<p>
+         
+ 	        <a href="#">My Account</a> | <a href="login.jsf">Log In</a> | <a href="#"> Log Out</a></p>
+        
+	 
+		</div>
+        <div class="cleaner"></div>
+    </div> 
+    
+    <div id="templatemo_menubar">
+    	<div id="top_nav" class="ddsmoothmenu">
+            <ul>
+                <li><a href="index.xhtml" class="selected">Home</a></li>
+                
+                <li><a href="#">About</a>
+                  
+                </li>
+               
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of ddsmoothmenu -->
+        <div id="templatemo_search">
+            <form action="#" method="get">
+              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+        </div>
+    </div> <!-- END of templatemo_menubar -->
+    
+    
+          <div class="cleaner">
+           
+            <br/><br/> 
+             <h:form>      
+	     <table> 
+		    <tr>
+		     	<td><h:outputLabel for="id" value="Id : " /></td>
+		     	<td><p:inputText id="id" value="#{userMB.id}"> 
+		     			<p:ajax event="blur" update="idMsg" />
+		     		</p:inputText>
+		     		<p:message id="idMsg" for="id" display="icon"/> 
+		     	</td>
+		     </tr>
+		     <tr>
+		     	<td><h:outputLabel for="name" value="Name : " /></td>
+		     	<td><p:inputText id="name" value="#{userMB.name}">
+		     			<f:validateLength minimum="5" /> 
+		     			<p:ajax event="blur" update="nameMsg" />
+		     		</p:inputText>
+		     		<p:message id="nameMsg" for="name" display="icon"/> 
+		     	</td>
+		     </tr>
+		     <tr>
+		     	<td><h:outputLabel for="surname" value="Surname : " /></td>   
+		     	<td><p:inputText id="surname" value="#{userMB.surname}"> 
+		     			<f:validateLength minimum="5" /> 
+		     			<p:ajax event="blur" update="surnameMsg" />  
+		     		</p:inputText>
+		     		<p:message id="surnameMsg" for="surname" display="icon"/> 
+		     	</td>    
+		     </tr>   
+		     
+		         <tr>
+		     	<td><h:outputLabel for="phone" value="Phone: " /></td>   
+		     	<td><p:inputText id="phone" value="#{userMB.phone}"> 
+		     			
+		     			<p:ajax event="blur" update="phoneMsg" />  
+		     		</p:inputText>
+		     		<p:message id="phoneMsg" for="phone" display="icon"/> 
+		     	</td>    
+		     </tr>  
+		     
+		         <tr>
+		     	<td><h:outputLabel for="address" value="Address : " /></td>   
+		     	<td><p:inputText id="address" value="#{userMB.address}"> 
+		     			 
+		     			<p:ajax event="blur" update="addressMsg" />  
+		     		</p:inputText>
+		     		<p:message id="addressMsg" for="address" display="icon"/> 
+		     	</td>    
+		     </tr>         
+	         <tr>
+		     	<td><p:commandButton id="addUser" value="Add" action="#{userMB.addUser}" ajax="false"/></td>
+		     	<td><p:commandButton id="updateUser" value="Update" action="#{userMB.editUser}" ajax="false"/></td>
+		     	<td><p:commandButton id="deleteUser" value="Delete" action="#{userMB.deleteUser}" ajax="false"/></td>
+		     	<td><p:commandButton id="reset" value="Reset" action="#{userMB.reset}" ajax="false"/></td>
+		     </tr>   
+	     </table>
+	     
+	      <table> 
+		    
+		     <tr>
+		     	<td><h:outputLabel for="idClient" value="ClientId : " /></td>
+		     	<td><p:inputText id="idClient" value="#{accountMB.idClient}">
+		     			<p:ajax event="blur" update="idClientMsg" />
+		     		</p:inputText>
+		     		<p:message id="idClientMsg" for="idClient" display="icon"/> 
+		     	</td>
+		     </tr>
+		     
+		     
+		       <tr>
+		     	<td><h:outputLabel for="accNb" value="AccNb : " /></td>   
+		     	<td><p:inputText id="AccNb" value="#{accountMB.accNb}"> 
+		     			 
+		     			<p:ajax event="blur" update="addressMsg" />  
+		     		</p:inputText>
+		     		<p:message id="AccNbMsg" for="AccNb" display="icon"/> 
+		     	</td>    
+		     </tr>         
+		     <tr>
+		     	<td><h:outputLabel for="Type" value="Type : " /></td>   
+		     	<td><p:inputText id="Type" value="#{accountMB.type}">
+		     			<p:ajax event="blur" update="TypeMsg" />  
+		     		</p:inputText>
+		     		<p:message id="TypeMsg" for="Type" display="icon"/> 
+		     	</td>    
+		     </tr>   
+		     
+		         <tr>
+		     	<td><h:outputLabel for="Date" value="Date: " /></td>   
+		     	<td><p:inputText id="Date" value="#{accountMB.date}"> 
+		     			
+		     			<p:ajax event="blur" update="phoneMsg" />  
+		     		</p:inputText>
+		     		<p:message id="DateMsg" for="Date" display="icon"/> 
+		     	</td>    
+		     </tr>  
+		     
+		         <tr>
+		     	<td><h:outputLabel for="Sum" value="Sum : " /></td>   
+		     	<td><p:inputText id="Sum" value="#{accountMB.sum}"> 
+		     			 
+		     			<p:ajax event="blur" update="addressMsg" />  
+		     		</p:inputText>
+		     		<p:message id="SumMsg" for="Sum" display="icon"/> 
+		     	</td>    
+		     </tr>         
+	         <tr>
+		     	<td><p:commandButton id="addAccount" value="Add" action="#{accountMB.addAccount}" ajax="false"/></td>
+		     	
+		     </tr>   
+	     </table>
+	     
+	      <table> 
+		    
+		     <tr>
+		     	<td><h:outputLabel for="idAccount" value="AccountId : " /></td>
+		     	<td><p:inputText id="idAccount" value="#{transactionMB.idAccount}">
+		     			<p:ajax event="blur" update="idAccountMsg" />
+		     		</p:inputText>
+		     		<p:message id="idAccountMsg" for="idAccount" display="icon"/> 
+		     	</td>
+		     </tr>
+		     <tr>
+		     	<td><h:outputLabel for="toAccNb" value="toAccNb : " /></td>   
+		     	<td><p:inputText id="toAccNb" value="#{transactionMB.toAccNb}">
+		     			<p:ajax event="blur" update="toAccNbMsg" />  
+		     		</p:inputText>
+		     		<p:message id="toAccNbMsg" for="toAccNb" display="icon"/> 
+		     	</td>    
+		     </tr>   
+		     
+		       <tr>
+		     	<td><h:outputLabel for="sum" value="Sum : " /></td>   
+		     	<td><p:inputText id="sum" value="#{transactionMB.sum}"> 
+		     			 
+		     			<p:ajax event="blur" update="sumMsg" />  
+		     		</p:inputText>
+		     		<p:message id="sumMsg" for="sum" display="icon"/> 
+		     	</td>    
+		     </tr>        
+		     
+		      
+	         <tr>
+		     	<td><p:commandButton id="addTransaction" value="Add" action="#{transactionMB.addTransaction}" ajax="false"/></td>
+		     	
+		     </tr>   
+		     
+	     </table>
+	     
+	     <table>
+	     <tr>
+	     <td><p:commandButton id="edit" value="Edit" action="success.xhtml" ajax="false"/></td></tr>
+	     </table>
+     </h:form> 
+     
+     
+     
+     <div align="center" style="margin-left:50px;">
+     
+     
+     <h:form>
+      <td style="vertical-align:top">
+		<h:outputText value="USERs : "></h:outputText>
+		<p:dataTable id="users" var="user" value="#{userMB.userList}" style="width: 20%">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="ID" />
+				</f:facet>
+				<h:outputText value="#{user.id}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Name" />
+				</f:facet>
+				<h:outputText value="#{user.name}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Surname" />
+				</f:facet>
+				<h:outputText value="#{user.surname}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Phone" />
+				</f:facet>
+				<h:outputText value="#{user.phone}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="Address" />
+				</f:facet>
+				
+				<input type="text" value="#{user.address}" ></input>
+				
+			</p:column>
+			
+			<p:column>
+			<p:commandButton id="editUser" value="Edit" action="#{userMB.editUser}" ajax="false"/>
+				
+				
+			</p:column>
+			
+			<p:column>
+			<p:commandButton id="deleteUser" value="Delete" action="#{userMB.deleteUser}" ajax="false"/>
+				
+				
+			</p:column>
+		</p:dataTable>
+		
+	</td>	
+	</h:form>
+	
+	<h:form>
+		<h:outputText value="ACCOUNTs : "></h:outputText>
+		<p:dataTable id="accounts" var="account" value="#{accountMB.accountList}" style="width: 20%">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idAccount" />
+				</f:facet>
+				<h:outputText value="#{account.idAccount}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idClient" />
+				</f:facet>
+				<h:outputText value="#{account.idClient}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="AccountNb" />
+				</f:facet>
+				<h:outputText value="#{account.accNb}" />
+			</p:column>
+			
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="type" />
+				</f:facet>
+				<h:outputText value="#{account.type}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="date" />
+				</f:facet>
+				<h:outputText value="#{account.date}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="sum" />
+				</f:facet>
+				<h:outputText value="#{account.sum}" />
+			</p:column>
+			
+		</p:dataTable>
+		
+		
+	</h:form>
+	
+	<h:form>
+		<h:outputText value="TRANSACTIONs : "></h:outputText>
+		<p:dataTable id="transaction" var="transaction" value="#{transactionMB.transactionList}" style="width: 10%">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idTransaction" />
+				</f:facet>
+				<h:outputText value="#{transaction.idTransaction}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="idAccount" />
+				</f:facet>
+				<h:outputText value="#{transaction.idAccount}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value="toAccNb" />
+				</f:facet>
+				<h:outputText value="#{transaction.toAccNb}" />
+			</p:column>
+			
+			
+			
+		</p:dataTable>
+		
+		
+	</h:form>
+     </div>
+     
+     
+     
+     
+          </div>
+  </div> 
+        <div class="cleaner"></div>
+    </div> <!-- END of templatemo_main -->
+    
+    <div id="templatemo_footer">
+    	<p><a href="#">Home</a> | <a href="#">About</a> | <a href="#">FAQs</a> | <a href="login.jsf">Admin</a> | <a href="#">Contact Us</a>
+		</p>
+
+   	Copyright © 2072 <a href="#">Bank App</a> <!-- Credit: www.templatemo.com --></div> <!-- END of templatemo_footer -->
+    
+
+
+</body>
+</html> 

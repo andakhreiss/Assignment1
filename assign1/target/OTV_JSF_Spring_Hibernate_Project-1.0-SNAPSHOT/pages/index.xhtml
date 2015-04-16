@@ -1,0 +1,125 @@
+<html xmlns="http://www.w3.org/1999/xhtml"  
+     xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:p="http://primefaces.org/ui">  
+ <h:head><title>Welcome to OTV_JSF_Spring_Hibernate_Project</title></h:head>  
+ <h:body>
+     <h:form>      
+	     <table> 
+		    
+		     <tr>
+		     	<td><h:outputLabel for="name" value="Name : " /></td>
+		     	<td><p:inputText id="name" value="#{userMB.name}">
+		     			<f:validateLength minimum="5" /> 
+		     			<p:ajax event="blur" update="nameMsg" />
+		     		</p:inputText>
+		     		<p:message id="nameMsg" for="name" display="icon"/> 
+		     	</td>
+		     </tr>
+		     <tr>
+		     	<td><h:outputLabel for="surname" value="Surname : " /></td>   
+		     	<td><p:inputText id="surname" value="#{userMB.surname}"> 
+		     			<f:validateLength minimum="5" /> 
+		     			<p:ajax event="blur" update="surnameMsg" />  
+		     		</p:inputText>
+		     		<p:message id="surnameMsg" for="surname" display="icon"/> 
+		     	</td>    
+		     </tr>   
+		     
+		         <tr>
+		     	<td><h:outputLabel for="phone" value="Phone: " /></td>   
+		     	<td><p:inputText id="phone" value="#{userMB.phone}"> 
+		     			
+		     			<p:ajax event="blur" update="phoneMsg" />  
+		     		</p:inputText>
+		     		<p:message id="phoneMsg" for="phone" display="icon"/> 
+		     	</td>    
+		     </tr>  
+		     
+		         <tr>
+		     	<td><h:outputLabel for="address" value="Address : " /></td>   
+		     	<td><p:inputText id="address" value="#{userMB.address}"> 
+		     			 
+		     			<p:ajax event="blur" update="addressMsg" />  
+		     		</p:inputText>
+		     		<p:message id="addressMsg" for="address" display="icon"/> 
+		     	</td>    
+		     </tr>         
+	         <tr>
+		     	<td><p:commandButton id="addUser" value="Add" action="#{userMB.addUser}" ajax="false"/></td>
+		     	<td><p:commandButton id="reset" value="Reset" action="#{userMB.reset}" ajax="false"/></td>
+		     </tr>   
+	     </table>
+	     
+	      <table> 
+		    
+		     <tr>
+		     	<td><h:outputLabel for="idClient" value="ClientId : " /></td>
+		     	<td><p:inputText id="idClient" value="#{accountMB.idClient}">
+		     			<p:ajax event="blur" update="idClientMsg" />
+		     		</p:inputText>
+		     		<p:message id="idClientMsg" for="idClient" display="icon"/> 
+		     	</td>
+		     </tr>
+		     <tr>
+		     	<td><h:outputLabel for="Type" value="Type : " /></td>   
+		     	<td><p:inputText id="Type" value="#{accountMB.type}">
+		     			<p:ajax event="blur" update="TypeMsg" />  
+		     		</p:inputText>
+		     		<p:message id="TypeMsg" for="Type" display="icon"/> 
+		     	</td>    
+		     </tr>   
+		     
+		         <tr>
+		     	<td><h:outputLabel for="Date" value="Date: " /></td>   
+		     	<td><p:inputText id="Date" value="#{accountMB.date}"> 
+		     			
+		     			<p:ajax event="blur" update="phoneMsg" />  
+		     		</p:inputText>
+		     		<p:message id="DateMsg" for="Date" display="icon"/> 
+		     	</td>    
+		     </tr>  
+		     
+		         <tr>
+		     	<td><h:outputLabel for="Sum" value="Sum : " /></td>   
+		     	<td><p:inputText id="Sum" value="#{accountMB.sum}"> 
+		     			 
+		     			<p:ajax event="blur" update="addressMsg" />  
+		     		</p:inputText>
+		     		<p:message id="SumMsg" for="Sum" display="icon"/> 
+		     	</td>    
+		     </tr>         
+	         <tr>
+		     	<td><p:commandButton id="addAccount" value="Add" action="#{accountMB.addAccount}" ajax="false"/></td>
+		     	
+		     </tr>   
+	     </table>
+	     
+	      <table> 
+		    
+		     <tr>
+		     	<td><h:outputLabel for="idAccount" value="AccountId : " /></td>
+		     	<td><p:inputText id="idAccount" value="#{transactionMB.idAccount}">
+		     			<p:ajax event="blur" update="idAccountMsg" />
+		     		</p:inputText>
+		     		<p:message id="idAccountMsg" for="idAccount" display="icon"/> 
+		     	</td>
+		     </tr>
+		     <tr>
+		     	<td><h:outputLabel for="toAccNb" value="toAccNb : " /></td>   
+		     	<td><p:inputText id="toAccNb" value="#{transactionMB.toAccNb}">
+		     			<p:ajax event="blur" update="toAccNbMsg" />  
+		     		</p:inputText>
+		     		<p:message id="toAccNbMsg" for="toAccNb" display="icon"/> 
+		     	</td>    
+		     </tr>   
+		     
+		      
+	         <tr>
+		     	<td><p:commandButton id="addTransaction" value="Add" action="#{transactionMB.addTransaction}" ajax="false"/></td>
+		     	
+		     </tr>   
+	     </table>
+     </h:form>      
+</h:body>
+</html> 
